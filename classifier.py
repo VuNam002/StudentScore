@@ -1,8 +1,11 @@
 from pathlib import Path
 
 import pandas as pd
+from models.LightGBM import train_lightgbm
 from models.random_forest import train_random_forest
+from models.ridge import train_ridge
 from models.svm import train_svm
+from models.xgboost_regressor import train_xgboost
 from utils.artifacts import (
     build_run_info,
     create_run_dir,
@@ -22,6 +25,9 @@ RANDOM_STATE = 42
 MODELS = {
     "svm": train_svm,
     "random_forest": train_random_forest,
+    "xgboost": train_xgboost,
+    "ridge": train_ridge,
+    "lightgbm": train_lightgbm,
 }
 
 
